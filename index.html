@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TinkerLARS</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23264653'/><text x='8' y='12' font-size='10' text-anchor='middle' fill='white' font-family='sans-serif'>L</text></svg>" />
+</head>
+<body>
+<header>
+  <strong class="logo">TinkerLARS</strong>
+  <nav><button data-tab="design" class="active" data-i18n="design"></button><button data-tab="circuits" data-i18n="circuits"></button></nav>
+  <label class="lang"><span data-i18n="language"></span> <select id="lang"><option value="nb">Norsk</option><option value="en">English</option></select></label>
+</header>
+<main>
+  <section id="tab-design" class="tab active">
+    <aside class="panel">
+      <h3 data-i18n="shape"></h3>
+      <div id="shape-buttons" class="grid2"></div>
+      <h3 data-i18n="props"></h3>
+      <div id="props"></div>
+      <div class="row"><button data-mode="translate" data-i18n="move"></button><button data-mode="rotate" data-i18n="rotate"></button><button data-mode="scale" data-i18n="scale"></button></div>
+      <label><span data-i18n="grid"></span> <select id="snap"><option>0</option><option>0.5</option><option selected>1</option><option>2</option><option>5</option><option>10</option></select></label>
+      <button id="btn-group" data-i18n="group"></button>
+      <button id="btn-dup" data-i18n="duplicate"></button>
+      <button id="btn-del" data-i18n="del"></button>
+      <button id="btn-stl" class="primary" data-i18n="exportStl"></button>
+      <p class="hint" data-i18n="selectHint"></p>
+    </aside>
+    <div id="viewport"></div>
+  </section>
+  <section id="tab-circuits" class="tab">
+    <aside class="panel wide">
+      <h3 data-i18n="addComponent"></h3>
+      <div class="row"><select id="c-type"></select><select id="c-a"></select><select id="c-b"></select><input id="c-val" type="number" value="220" style="width:5em" /></div>
+      <button id="c-add" data-i18n="addComponent"></button>
+      <svg id="board" viewBox="0 0 420 260"></svg>
+      <ul id="c-list"></ul>
+      <button id="sim" class="primary" data-i18n="run"></button>
+    </aside>
+    <div class="codecol">
+      <div id="blockly"></div>
+      <h3 data-i18n="arduinoCode"></h3>
+      <pre id="code"></pre>
+    </div>
+  </section>
+</main>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
